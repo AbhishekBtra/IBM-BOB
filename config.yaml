@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# BigQuery Data Quality Analyzer — Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# Replace every placeholder value (ALL_CAPS) with your real values.
+# Authentication uses Application Default Credentials.
+# Run: gcloud auth application-default login
+# ─────────────────────────────────────────────────────────────────────────────
+
+bigquery:
+  # GCP project that owns the BigQuery dataset
+  project_id: "YOUR_GCP_PROJECT_ID"
+
+  # Dataset that contains the stored procedures and target tables
+  dataset_id: "YOUR_DATASET_ID"
+
+  # BigQuery processing region, e.g. "US", "EU", "us-central1"
+  location: "US"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Stories
+# Each entry maps one STORY/DEMAND ID to its target table and stored procedure.
+# Relationship: 1 STORY → 1 target table → 1 stored procedure (sproc)
+# ─────────────────────────────────────────────────────────────────────────────
+stories:
+  - story_id: "STORY-001"
+    # The BigQuery table this story populates
+    table: "your_target_table_name"
+    # The stored procedure responsible for populating the table
+    sproc: "your_stored_procedure_name"
+
+  - story_id: "STORY-002"
+    table: "another_target_table"
+    sproc: "another_stored_procedure"
+
+  - story_id: "STORY-003"
+    table: "yet_another_table"
+    sproc: "yet_another_sproc"

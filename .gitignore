@@ -1,0 +1,10 @@
+reports/*.yaml
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+*.iml
+.idea/
+.vscode/
